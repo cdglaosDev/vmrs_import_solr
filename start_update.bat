@@ -12,11 +12,6 @@ goto notrun
 
 :runscript
 echo Run script!
-cd update_script
-call get_update_data.bat
-call import_to_pre_upload.bat
-call rename_file.bat
-call run_update.bat
 timeout 5
 exit
 

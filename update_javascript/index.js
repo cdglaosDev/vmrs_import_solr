@@ -16,6 +16,7 @@ async function startProgram () {
   const cleansingData = await readExcel()
   const arr = await PreUpload.findAll()
     .then(result => {
+      console.log('Data have:', result.length, 'records.')
       return result
     })
     .catch(err => {
