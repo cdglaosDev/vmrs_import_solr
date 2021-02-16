@@ -1,6 +1,6 @@
 const env = {
   DB_HOST: 'localhost',
-  DB_DATABASE: 'vrms_db',
+  DB_DATABASE: 'dbvrms',
   DB_DIALECT: 'mysql',
   DB_OPERATORSALIASES: 0,
   DB_CONNECTIONLIMIT: 20,
@@ -9,7 +9,7 @@ const env = {
   DB_WAITFORCONNECTIONS: true,
   DB_LOGGING: false,
   DB_USER: 'root',
-  DB_PASS: 'password',
+  DB_PASS: '',
   DB_MAX: 10,
   DB_MIN: 0,
   DB_ACQUIRE: 30000,
