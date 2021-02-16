@@ -1,6 +1,6 @@
 export default (sequelize, Sequelize) => {
   const VehicleVdvcPreUpload = sequelize.define(
-    'vehicles_solr_pre_upload',
+    'vehicles_pre_upload',
     {
       note_id_t: {
         type: Sequelize.STRING,

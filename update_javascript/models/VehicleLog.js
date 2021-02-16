@@ -1,6 +1,6 @@
 export default (sequelize, Sequelize) => {
   const log = sequelize.define(
-    'vehicles_log',
+    'vehicle_log',
     {
       vehicle_log_id: {
         type: Sequelize.INTEGER,

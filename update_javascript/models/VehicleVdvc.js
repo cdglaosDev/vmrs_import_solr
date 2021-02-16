@@ -1,6 +1,6 @@
 export default (sequelize, Sequelize) => {
   const VehicleVdvc = sequelize.define(
-    'vehicles_solr',
+    'vehicles_vdvc',
     {
       note_id_t: {
         type: Sequelize.STRING,
