@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js --exec babel-node"
+    "update": "node update.js",
+    "create": "node create.js",
+    "dev-update": "nodemon update.js --exec babel-node",
+    "dev-create": "nodemon create.js --exec babel-node"
   },
   "author": "",
   "license": "ISC",

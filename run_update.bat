@@ -107,7 +107,7 @@ echo Rename file success!
 cd..
 cd update_javascript
 
-npm start
+node update.js
 
 timeout 5
 exit
