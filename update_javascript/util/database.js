@@ -30,10 +30,10 @@ const sequelize = new Sequelize(env.DB_DATABASE, env.DB_USER, env.DB_PASS, {
   }
 })
 
-sequelize.authenticate()
-  .then(() => {
-    console.log('Connected to database successfully')
-  })
+// sequelize.authenticate()
+//   .then(() => {
+//     console.log('Connected to database successfully')
+//   })
 
 const db = {}
 db.Sequelize = Sequelize

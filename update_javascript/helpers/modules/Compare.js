@@ -12,7 +12,7 @@ async function compareProvinceAndDistrict (province, district, compareData) {
     if (bothIndex !== -1) {
       return {
         province: `0${compareData[bothIndex].province_code}`.substr(-2),
-        district: compareData[bothIndex].district_code ? `0${compareData[bothIndex].district_code}`.substr(-2) : null
+        district: compareData[bothIndex].district_code ? `0${compareData[bothIndex].district_code}`.substr(-4) : null
       }
     } else {
       return {
@@ -29,7 +29,7 @@ async function compareProvinceAndDistrict (province, district, compareData) {
 }
 
 async function compareBrandAndModel (brand, model, compareData, brandArr) {
-  const brandIndex = await brandArr.findIndex(value => value.name ? value.name.toUpperCase() : '' === brand.toUpperCase())
+  const brandIndex = await brandArr.findIndex(value => value.name ? value.name.toUpperCase() === brand.toUpperCase() : '' === brand.toUpperCase())
   if (brandIndex !== -1 && brandArr[brandIndex].id) {
     const brandId = brandArr[brandIndex].id
     // const bothIndex = await compareData.findIndex(value => value.brand_id === brandId && !value.model ? value.model.toString().toUpperCase() : '' === model.toUpperCase())

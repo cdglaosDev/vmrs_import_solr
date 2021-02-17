@@ -4,9 +4,22 @@ import cleansing from '../helpers/modules/Cleansing.js'
 
 const Vehicle = db.vehicle
 const VehicleVdvc = db.vehicleVDVC
-const VehiclePreUpload = db.vehicleVDVCPreUpload
 
 export default {
+  async findVehicleByNumber (number) {
+    return await VehicleVdvc.findAll({ where: { number: number } })
+      .then(async result => {
+        if (result.length === 0) {
+          return false
+        } else {
+          return result[0] 
+        }
+      })
+      .catch(err => {
+        console.log(err)
+        throw `Error when find Vehicle at note_id: ${noteId}`
+      })
+  },
   async findVehicle (noteId) {
     return await Vehicle.findAll({ where: { note_id: noteId }, attributes: ['id'] })
       .then(async result => {
