@@ -59,43 +59,23 @@ async function createVehicle (startNumber, lastNumber) {
         .then(async vehicleId => {
           await logController.craeteLog(vehicle.changelog_t, vehicleId)
             .catch(err => {
-              console.log(err)
-              logError = logError + vehicleId + ', ', + err +'\n'
+              console.log('errrrr', err)
+              logError = logError + `${vehicleId}, ${err}\n`
             })
           await historyController.createHistory(vehicleId)
             .catch(err => {
               console.log(err)
-              historyError = historyError + vehicleId + ', ', + err +'\n'
+              historyError = historyError + `${vehicleId}, ${err}\n`
             })
         })
         .catch(err => {
           console.log(err)
-          createError = createError + i + ', ' + err + '\n'
+          createError = createError + `${i}, ${err}\n`
         })
       console.log('----------------------------------')
     }
   }
-  if (createError !== '') await fileController.createErrorFile(__dirname, 'Vehicle', createError, startNumber, lastNumber)
-    .then(result => {
-      console.log(result)
-    })
-    .catch(err => {
-      console.log(err)
-    })
-  if (logError !== '') await fileController.createErrorFile(__dirname, 'Log', logError, startNumber, lastNumber)
-    .then(result => {
-      console.log(result)
-    })
-    .catch(err => {
-      console.log(err)
-    })
-  if (historyError !== '') await fileController.createErrorFile(__dirname, 'History', historyError, startNumber, lastNumber)
-    .then(result => {
-      console.log(result)
-    })
-    .catch(err => {
-      console.log(err)
-    })
+  await creteErrorFile (createError, logError, historyError)
 }
 
 async function readExcel () {
@@ -110,4 +90,28 @@ async function readExcel () {
     Object.assign(object, obj)
   })
   return object
+}
+
+async function creteErrorFile (createError, logError, historyError) {
+  if (createError !== '') await fileController.createErrorFile(__dirname, 'Update_crete', createError, '_', '_')
+    .then(result => {
+      console.log(result)
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  if (logError !== '') await fileController.createErrorFile(__dirname, 'Update_log', logError, '_', '_')
+    .then(result => {
+      console.log(result)
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  if (historyError !== '') await fileController.createErrorFile(__dirname, 'Update_history', historyError, '_', '_')
+    .then(result => {
+      console.log(result)
+    })
+    .catch(err => {
+      console.log(err)
+    })
 }

@@ -12,18 +12,18 @@ async function compareProvinceAndDistrict (province, district, compareData) {
     if (bothIndex !== -1) {
       return {
         province: `0${compareData[bothIndex].province_code}`.substr(-2),
-        district: compareData[bothIndex].district_code ? `0${compareData[bothIndex].district_code}`.substr(-4) : null
+        district: compareData[bothIndex].district_code ? `0${compareData[bothIndex].district_code}`.substr(-4) : 99999
       }
     } else {
       return {
         province: `0${compareData[provIndex].province_code}`.substr(-2),
-        district: null
+        district: 99999
       }
     }
   } else {
     return {
-      province: null,
-      district: null
+      province: 99999,
+      district: 99999
     }
   }
 }
@@ -40,18 +40,18 @@ async function compareBrandAndModel (brand, model, compareData, brandArr) {
     if (bothIndex !== -1) {
       return {
         brand: brandId,
-        model: compareData[bothIndex].model_id ? compareData[bothIndex].model_id : null
+        model: compareData[bothIndex].model_id ? compareData[bothIndex].model_id : 99999
       }
     } else {
       return {
         brand: brandId,
-        model: null
+        model: 99999
       }
     }
   } else {
     return {
-      brand: null,
-      model: null
+      brand: 99999,
+      model: 99999
     }
   }
 }
