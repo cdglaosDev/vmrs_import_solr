@@ -56,11 +56,11 @@ export default (sequelize, Sequelize) => {
         allowNull: true,
         defaultValue: null
       },
-      vehicle_category_id: {
-        type: Sequelize.INTEGER,
-        allowNull: true,
-        defaultValue: null
-      },
+      // vehicle_category_id: {
+      //   type: Sequelize.INTEGER,
+      //   allowNull: true,
+      //   defaultValue: null
+      // },
       province_code: {
         type: Sequelize.STRING(50),
         allowNull: true,
@@ -245,7 +245,7 @@ export default (sequelize, Sequelize) => {
         allowNull: true,
         defaultValue: null
       },
-      moter_brand_id: {
+      motor_brand_id: {
         type: Sequelize.INTEGER,
         allowNull: true,
         defaultValue: null
@@ -334,11 +334,11 @@ export default (sequelize, Sequelize) => {
         allowNull: true,
         defaultValue: 0
       },
-      vehicle_kind_id: {
-        type: Sequelize.INTEGER,
-        allowNull: true,
-        defaultValue: null
-      },
+      // vehicle_kind_id: {
+      //   type: Sequelize.INTEGER,
+      //   allowNull: true,
+      //   defaultValue: null
+      // },
       motor_brand_id: {
         type: Sequelize.INTEGER,
         allowNull: true,

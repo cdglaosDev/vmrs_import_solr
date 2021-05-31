@@ -22,8 +22,8 @@ export default (sequelize, Sequelize) => {
       license_log_activity: {
         type: Sequelize.STRING
       },
-      vehicle_kind_id: {
-        type: Sequelize.INTEGER
+      vehicle_kind_code: { // ******** edit from vehicle_kind_id to vehicle_kind_code
+        type: Sequelize.STRING // ******** edit from integer to string
       }
     },
     {

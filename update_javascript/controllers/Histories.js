@@ -182,7 +182,7 @@ async function findHistory (history, historyData) {
     value.lice_no_province_code === historyData.lice_no_province_code &&
     value.lice_alph_id === historyData.lice_alph_id &&
     value.lice_no_number === historyData.lice_no_number &&
-    value.vehicle_kind_id === historyData.vehicle_kind_id
+    value.vehicle_kind_code === historyData.vehicle_kind_code // **** chenge vehicle_kind_id to vehicle_kind_code
   )
 }
 

@@ -9,7 +9,7 @@ const env = {
   DB_WAITFORCONNECTIONS: true,
   DB_LOGGING: false,
   DB_USER: 'root',
-  DB_PASS: '',
+  DB_PASS: '123456',
   DB_MAX: 10,
   DB_MIN: 0,
   DB_ACQUIRE: 30000,
