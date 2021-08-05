@@ -110,10 +110,10 @@ cd update_javascript
 
 node update.js
 
-timeout 5
-exit
+rem timeout 5
+rem exit
 
 :notrun
 echo Not run script!
-timeout 5
+timeout 40
 exit
